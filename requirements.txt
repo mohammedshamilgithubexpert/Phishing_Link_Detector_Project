@@ -1,0 +1,11 @@
+beautifulsoup4
+dns
+joblib
+numpy
+requests
+scikit-learn
+scipy
+sklearn
+tldextract
+urllib3
+whois
