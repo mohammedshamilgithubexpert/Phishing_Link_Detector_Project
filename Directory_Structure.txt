@@ -1,0 +1,76 @@
+Phishing Link Detector/
+    Extension/
+        clientServer.php
+        features_extraction.py
+        markup.txt
+    dataset/
+        Training Dataset.arff
+        Testing Dataset.arff
+    LICENSE
+    README.md
+    requirements.txt
+    train.py
+    test.py
+    data_validation.py
+    patterns.py
+    config.yml
+
+
+
+The Training Dataset.arff and Testing Dataset.arff files are used to train and test the machine learning model in the Phishing Link Detector project. These files contain a collection of labeled data, where each instance represents a web page and its corresponding label (either "legitimate" or "phishing").
+
+To create these files, you would need to collect a large dataset of web pages, label them as either legitimate or phishing, and then format the data into the ARFF (Attribute-Relation File Format) format.
+
+Here's a step-by-step guide to creating the Training Dataset.arff and Testing Dataset.arff files:
+
+Step 1: Collect Web Pages
+
+Collect a large dataset of web pages, including both legitimate and phishing websites. You can use web scraping techniques or collect data from existing datasets.
+
+Step 2: Label the Data
+
+Label each web page as either "legitimate" or "phishing". You can use a combination of manual labeling and automated tools to label the data.
+
+Step 3: Extract Features
+
+Extract relevant features from each web page, such as:
+
+URL length
+Presence of HTTPS
+Presence of suspicious keywords
+Number of external links
+Number of images
+etc.
+Step 4: Format the Data
+
+Format the data into the ARFF format, which consists of:
+
+A header section that describes the attributes (features) and their data types
+A data section that contains the instances (web pages) and their corresponding attribute values
+Here's an example of what the ARFF file might look like:
+
+@relation phishing_dataset
+
+@attribute url_length {numeric}
+@attribute https {numeric}
+@attribute suspicious_keywords {numeric}
+@attribute external_links {numeric}
+@attribute images {numeric}
+@attribute label {nominal, legitimate, phishing}
+
+@data
+url_length,https,suspicious_keywords,external_links,images,label
+54,1,0,5,10,legitimate
+75,0,1,10,5,phishing
+...
+
+
+Step 5: Split the Data
+
+Split the data into two files: Training Dataset.arff and Testing Dataset.arff. The training dataset should contain a large majority of the data (e.g. 80-90%), and the testing dataset should contain the remaining data.
+
+You can use a random split or a stratified split to ensure that the testing dataset has a similar distribution of labels as the training dataset.
+
+Step 6: Use the Data
+
+Use the Training Dataset.arff file to train the machine learning model, and use the Testing Dataset.arff file to evaluate the model's performance.
